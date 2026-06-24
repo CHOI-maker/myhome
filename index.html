@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>73㎡ 확장형 홈 스타일러</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <aside class="panel">
+      <h1>73㎡ 확장형 홈 스타일러</h1>
+      <p class="summary">
+        평면도 기반 기본값: 전용 73㎡ 타입(확장형) 가정 레이아웃
+      </p>
+
+      <section>
+        <h2>가구 선택</h2>
+        <div class="buttons">
+          <button data-furniture="chair">의자</button>
+          <button data-furniture="desk">책상</button>
+          <button data-furniture="bed">침대</button>
+          <button data-furniture="sofa">소파</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>사용 방법</h2>
+        <ol>
+          <li>가구를 선택합니다.</li>
+          <li>바닥을 클릭하면 배치됩니다.</li>
+          <li>배치된 가구를 드래그해 이동합니다.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>73㎡ 타입 분석(요약)</h2>
+        <ul>
+          <li>거실+주방 통합 공용공간 중심 동선</li>
+          <li>침실 3개를 가정한 분리형 사적공간</li>
+          <li>확장형 기준으로 거실/안방 폭 확대를 기본 반영</li>
+        </ul>
+      </section>
+
+      <button id="reset">초기화</button>
+      <p id="status">현재 선택: 없음</p>
+    </aside>
+
+    <main>
+      <canvas id="scene"></canvas>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
