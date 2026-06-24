@@ -125,6 +125,33 @@ button.active {
   background: #fee2e2;
 }
 
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 14px;
+}
+
+#save {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #15803d;
+}
+
+#save:hover {
+  background: #dcfce7;
+}
+
+#load {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1d4ed8;
+}
+
+#load:hover {
+  background: #dbeafe;
+}
+
 #status {
   margin-top: 8px;
   font-size: 0.8rem;

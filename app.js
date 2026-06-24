@@ -514,6 +514,60 @@ document.getElementById("reset").addEventListener("click", () => {
   statusEl.textContent = "현재 선택: 없음";
 });
 
+/* ─── Save / Load (localStorage) ────────────────────────────────────────────── */
+const SAVE_KEY = "myhome_layout";
+
+function saveLayout() {
+  const data = furnitures.map((g) => ({
+    type:    g.userData.type,
+    x:       g.position.x,
+    z:       g.position.z,
+    rotY:    g.rotation.y,
+    halfW:   g.userData.halfW,
+    halfD:   g.userData.halfD,
+  }));
+  localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+  statusEl.textContent = "저장 완료!";
+  setTimeout(() => {
+    statusEl.textContent = selectedType ? `현재 선택: ${catalog[selectedType].label}` : "현재 선택: 없음";
+  }, 1500);
+}
+
+function loadLayout() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) { statusEl.textContent = "저장된 데이터가 없습니다."; return; }
+  const data = JSON.parse(raw);
+
+  // Clear current furniture
+  furnitures.splice(0).forEach((g) => {
+    scene.remove(g);
+    g.traverse((c) => {
+      if (c.isMesh) { c.geometry.dispose(); c.material.dispose(); }
+    });
+  });
+
+  data.forEach(({ type, x, z, rotY, halfW, halfD }) => {
+    const g = buildFurniture(type);
+    g.position.set(x, 0, z);
+    g.rotation.y = rotY;
+    g.userData = { type, halfW, halfD, baseY: 0 };
+    scene.add(g);
+    furnitures.push(g);
+    lastPlaced = g;
+  });
+
+  statusEl.textContent = "불러오기 완료!";
+  setTimeout(() => {
+    statusEl.textContent = selectedType ? `현재 선택: ${catalog[selectedType].label}` : "현재 선택: 없음";
+  }, 1500);
+}
+
+document.getElementById("save").addEventListener("click", saveLayout);
+document.getElementById("load").addEventListener("click", loadLayout);
+
+// Auto-load saved layout on startup
+if (localStorage.getItem(SAVE_KEY)) loadLayout();
+
 /* ─── Resize ─────────────────────────────────────────────────────────────────── */
 window.addEventListener("resize", resize);
 function resize() {
