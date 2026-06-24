@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: 100vh;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.panel {
+  padding: 20px;
+  border-right: 1px solid #e2e8f0;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.panel h1 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.panel h2 {
+  font-size: 1rem;
+  margin: 18px 0 8px;
+}
+
+.summary {
+  color: #475569;
+  margin: 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+button {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button.active {
+  border-color: #2563eb;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+#reset {
+  width: 100%;
+  margin-top: 18px;
+  background: #eff6ff;
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+main {
+  min-width: 0;
+}
+
+#scene {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
