@@ -497,7 +497,7 @@ document.querySelectorAll("[data-furniture]").forEach((btn) => {
 /* ─── Panel toggle ───────────────────────────────────────────────────────────── */
 document.getElementById("panel-toggle").addEventListener("click", () => {
   document.body.classList.toggle("panel-hidden");
-  window.dispatchEvent(new Event("resize"));
+  resize();
 });
 
 document.getElementById("reset").addEventListener("click", () => {
