@@ -18,16 +18,45 @@
     <aside class="panel">
       <h1>73㎡ 확장형 홈 스타일러</h1>
       <p class="summary">
-        평면도 기반 기본값: 전용 73㎡ 타입(확장형) 가정 레이아웃
+        73㎡ 확장형 · 5개 구역 평면 기반 3D 홈 스타일러
       </p>
 
       <section>
         <h2>가구 선택</h2>
+
+        <p class="cat-label">거실</p>
         <div class="buttons">
-          <button data-furniture="chair">의자</button>
-          <button data-furniture="desk">책상</button>
-          <button data-furniture="bed">침대</button>
           <button data-furniture="sofa">소파</button>
+          <button data-furniture="armchair">1인소파</button>
+          <button data-furniture="coffeeTable">커피테이블</button>
+          <button data-furniture="tvStand">TV장</button>
+        </div>
+
+        <p class="cat-label">침실</p>
+        <div class="buttons">
+          <button data-furniture="bed">더블침대</button>
+          <button data-furniture="nightstand">협탁</button>
+          <button data-furniture="wardrobe">옷장</button>
+          <button data-furniture="dresser">화장대</button>
+        </div>
+
+        <p class="cat-label">주방 · 식당</p>
+        <div class="buttons">
+          <button data-furniture="diningTable">식탁(4인)</button>
+          <button data-furniture="diningChair">식탁의자</button>
+          <button data-furniture="fridge">냉장고</button>
+        </div>
+
+        <p class="cat-label">서재</p>
+        <div class="buttons">
+          <button data-furniture="desk">책상</button>
+          <button data-furniture="bookshelf">책장</button>
+        </div>
+
+        <p class="cat-label">기타</p>
+        <div class="buttons">
+          <button data-furniture="washer">세탁기</button>
+          <button data-furniture="shoeCabinet">신발장</button>
         </div>
       </section>
 
@@ -37,15 +66,18 @@
           <li>가구를 선택합니다.</li>
           <li>바닥을 클릭하면 배치됩니다.</li>
           <li>배치된 가구를 드래그해 이동합니다.</li>
+          <li><kbd>R</kbd> 키로 마지막 가구를 90° 회전합니다.</li>
         </ol>
       </section>
 
       <section>
-        <h2>73㎡ 타입 분석(요약)</h2>
+        <h2>73㎡ 확장형 평면 구성</h2>
         <ul>
-          <li>거실+주방 통합 공용공간 중심 동선</li>
-          <li>침실 3개를 가정한 분리형 사적공간</li>
-          <li>확장형 기준으로 거실/안방 폭 확대를 기본 반영</li>
+          <li><span class="dot" style="background:#ede8de"></span> 거실 (발코니 확장)</li>
+          <li><span class="dot" style="background:#e4ede0"></span> 주방 · 식당</li>
+          <li><span class="dot" style="background:#e8e2ee"></span> 안방</li>
+          <li><span class="dot" style="background:#dfe8f0"></span> 침실 2</li>
+          <li><span class="dot" style="background:#edeae2"></span> 침실 3</li>
         </ul>
       </section>
 
