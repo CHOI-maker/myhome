@@ -6,64 +6,123 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 300px 1fr;
   height: 100vh;
   color: #0f172a;
   background: #f8fafc;
 }
 
 .panel {
-  padding: 20px;
+  padding: 16px;
   border-right: 1px solid #e2e8f0;
   overflow-y: auto;
   background: #ffffff;
 }
 
 .panel h1 {
-  font-size: 1.3rem;
-  margin: 0 0 10px;
+  font-size: 1.15rem;
+  margin: 0 0 6px;
 }
 
 .panel h2 {
-  font-size: 1rem;
-  margin: 18px 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 16px 0 6px;
+  color: #1e293b;
 }
 
 .summary {
   color: #475569;
+  font-size: 0.8rem;
   margin: 0;
+}
+
+.cat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 12px 0 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 5px;
 }
 
 button {
   border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 8px 10px;
+  border-radius: 7px;
+  padding: 7px 6px;
   background: #fff;
   cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+button:hover {
+  background: #f1f5f9;
 }
 
 button.active {
   border-color: #2563eb;
   color: #2563eb;
-  font-weight: 600;
+  font-weight: 700;
+  background: #eff6ff;
 }
 
 #reset {
   width: 100%;
-  margin-top: 18px;
-  background: #eff6ff;
+  margin-top: 14px;
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+#reset:hover {
+  background: #fee2e2;
 }
 
 #status {
-  margin-top: 10px;
-  font-size: 0.9rem;
+  margin-top: 8px;
+  font-size: 0.8rem;
   color: #334155;
+}
+
+kbd {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 0.78em;
+  font-family: monospace;
+}
+
+.panel ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.panel ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 5px;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
 }
 
 main {
