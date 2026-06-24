@@ -480,11 +480,24 @@ const statusEl = document.getElementById("status");
 
 document.querySelectorAll("[data-furniture]").forEach((btn) => {
   btn.addEventListener("click", () => {
-    selectedType = btn.dataset.furniture;
-    document.querySelectorAll("[data-furniture]").forEach((b) =>
-      b.classList.toggle("active", b === btn));
-    statusEl.textContent = `현재 선택: ${catalog[selectedType].label}`;
+    if (selectedType === btn.dataset.furniture) {
+      // Clicking the active button again deselects it
+      selectedType = null;
+      btn.classList.remove("active");
+      statusEl.textContent = "현재 선택: 없음";
+    } else {
+      selectedType = btn.dataset.furniture;
+      document.querySelectorAll("[data-furniture]").forEach((b) =>
+        b.classList.toggle("active", b === btn));
+      statusEl.textContent = `현재 선택: ${catalog[selectedType].label}`;
+    }
   });
+});
+
+/* ─── Panel toggle ───────────────────────────────────────────────────────────── */
+document.getElementById("panel-toggle").addEventListener("click", () => {
+  document.body.classList.toggle("panel-hidden");
+  window.dispatchEvent(new Event("resize"));
 });
 
 document.getElementById("reset").addEventListener("click", () => {
