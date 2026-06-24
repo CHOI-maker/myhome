@@ -465,6 +465,7 @@ canvas.addEventListener("pointerup", () => {
 /* ─── R key — rotate last-touched furniture 90° ─────────────────────────────── */
 document.addEventListener("keydown", (e) => {
   if ((e.key === "r" || e.key === "R") && lastPlaced) {
+    e.preventDefault();
     lastPlaced.rotation.y += Math.PI / 2;
     // Swap footprint dimensions so clamping stays correct
     const tmp = lastPlaced.userData.halfW;
